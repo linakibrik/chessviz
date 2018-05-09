@@ -42,7 +42,7 @@ void print_board(char **arr)
     for (int i = 0; i < 8; i++) {
         printf("\t%d", 8 - i);
         for (int j = 0; j < 8; j++) {
-            printf("%c", container[i][j]);
+            printf("%c", arr[i][j]);
         }
         printf("\n");
     }
@@ -78,7 +78,7 @@ int board_func(char *places, int test)
     pozition[2] = places[3] - 96 - 1; //c
     pozition[3] = 9 - (places[4] - 48) - 1; //8
     printf("\n ");
-    int check = move_fig(pozition, container);
+    int check = move_fig(pozition, arr);
     if (check == -1) { 
 		return -1; 
 	}
