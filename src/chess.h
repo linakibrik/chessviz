@@ -7,7 +7,7 @@
 
     void print_board();
 
-    char **_board();
+    char **board();
     
 
 #endif
