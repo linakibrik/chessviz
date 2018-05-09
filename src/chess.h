@@ -1,7 +1,13 @@
+#indef _CHESS_
+#define _CHESS_
 
-void print_new_board();
+    void print_new_board();
 
-int board_func(char *one_place, char *two_place);
+    int board_func(char *places, int test);
 
-void print_board(char **container);
+    void print_board();
 
+    char **board();
+    
+
+#endif
