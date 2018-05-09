@@ -21,7 +21,10 @@ int main()
                 scanf("%s", places);
                 if (one_place[0] == 'q') {
 					system("clear");
+<<<<<<< HEAD
 					printf("\t\tGoodbye\n");
+=======
+>>>>>>> d52cc3ea3eda6e1bca82460a9532a66a6a433fef
                     return 0;
                 } else {
                     ext = board_func(places, 0);
