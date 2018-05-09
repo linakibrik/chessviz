@@ -28,6 +28,18 @@ CTEST(P_Move, Incorrect) {
     ASSERT_EQUAL(expected,result);
 }
 
+CTEST(R_Move, Correct) {
+    int result = board_func("a1-a5", 1);
+    int expected = 0;
+    ASSERT_EQUAL(expected,result);
+}
+
+CTEST(R_Move, Incorrect) {
+    int result = board_func("a1-c3", 1);
+    int expected = -1;
+    ASSERT_EQUAL(expected,result);
+}
+
 int main(int argc, const char** argv) {
     _board();
     return ctest_main(argc, argv);
