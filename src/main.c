@@ -21,6 +21,7 @@ int main()
                 scanf("%s", places);
                 if (one_place[0] == 'q') {
 					system("clear");
+					printf("\t\tGoodbye\n");
                     return 0;
                 } else {
                     ext = board_func(places, 0);
@@ -33,6 +34,7 @@ int main()
             }
         } else if (q == 'q') {
             system("clear");
+            printf("\t\tGoodbye\n");
             return 0;
         }
     }
