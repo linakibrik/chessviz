@@ -32,19 +32,23 @@ char **board()
 void print_new_board()
 {
     arr = board();
-    print_board(arr);
+    print_board();
 }
 
 void print_board(char **arr)
 {
-
-    printf("\n");
-    for (int i = 0; i < 9; i++) {
-        for (int j = 0; j < 9; j++) {
-                printf("%3c", arr[i][j]);
+   system("clear");
+   printf("\n");
+   for (int i = 0; i < 8; i++) {
+        printf("\t%d", 8 - i);
+        for (int j = 0; j < 8; j++) {
+            printf("%c", container[i][j]);
         }
         printf("\n");
-    } 
+    }
+    for (char p = 'a'; p <= 'h'; p++) {
+        printf("%c", p);
+    }
 }
 
 char** movePawn(char **v, int* pozition)
