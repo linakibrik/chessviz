@@ -4,16 +4,18 @@
 
 int main()
 {
-    int i = 0;
+    system("clear");
+    int i = 0,ext;
+    char places[6]
     while ( i == 0) {
         char q;
         printf("\t(s) Start or (q) Quit\n");
         printf("\t\t Command : ");
         scanf("%c", &q);
-        print_new_board();
+        
         if (q == 's') {
-            i = -1;
-            int exit = 0;
+            system("clear");
+		    print_new_board();
             while (exit == 0) {
                 char one_place[4], two_place[4];
                 printf("Write coordinates or (r) to Restart:\n" );
