@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <math.h>
 #include "chess.h"
 #include "move_fig.h"
+
 char **arr;
 
 char **board()
@@ -20,8 +22,8 @@ char **board()
     char gl[]={'r','h','e','q','k','e','h','r'};
     char p ='p';
 
-    for (i=0; i<8; i++) {
-        arr[i][0] = gl[i];
+    for (i=0; i< 8; i++) {
+        arr[0][i] = gl[i];
         arr[7][i] = gl[i] - 32;
         arr[1][i] = p;
         arr[6][i] = p - 32;
@@ -32,25 +34,25 @@ char **board()
 void print_new_board()
 {
     arr = board();
-    print_board();
+    print_board(arr);
 }
 
 void print_board(char **arr)
 {
 	system("clear");
-    printf("\n");
+    printf("\n"); 
     for (int i = 0; i < 8; i++) {
-        printf("\t%d", 8 - i);
+        printf("\t %d", 8 - i);
         for (int j = 0; j < 8; j++) {
-            printf("%c", arr[i][j]);
+            printf(" %c", arr[i][j]);
         }
         printf("\n");
     }
     
-    printf("\t");
+    printf("\t  ");
     
     for (char p = 'a'; p <= 'h'; p++) {
-        printf("%c", p);
+        printf(" %c", p);
     }
     
     printf("\n");
@@ -78,7 +80,8 @@ int board_func(char *places, int test)
     pozition[2] = places[3] - 96 - 1; //c
     pozition[3] = 9 - (places[4] - 48) - 1; //8
     printf("\n ");
-    int check = move_fig(pozition, arr);
+    
+    int check = move_figure(pozition, arr);
     if (check == -1) { 
 		return -1; 
 	}
@@ -90,7 +93,7 @@ int board_func(char *places, int test)
     }
     arr = movePawn(arr, pozition);
     if (test == 0) {
-        print_board();
+        print_board(arr);
     }
     return 0;
 }

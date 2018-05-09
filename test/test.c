@@ -1,7 +1,7 @@
 #define CTEST_MAIN
 
-#include <board.h>
-#include <check_strokes.h>
+#include <chess.h>
+#include <move_fig.h>
 #include <ctest.h>
 
 CTEST(Syntax, Correct_Syntax) {
@@ -29,7 +29,7 @@ CTEST(P_Move, Incorrect) {
 }
 
 CTEST(R_Move, Correct) {
-    int result = board_func("a1-a5", 1);
+    int result = board_func("h1-h3", 1);
     int expected = 0;
     ASSERT_EQUAL(expected,result);
 }
@@ -53,7 +53,7 @@ CTEST(H_Move, Incorrect) {
 }
 
 CTEST(E_Move, Correct) {
-    int result = board_func("c1-a3", 1);
+    int result = board_func("c1-b2", 1);
     int expected = 0;
     ASSERT_EQUAL(expected,result);
 }
@@ -90,7 +90,7 @@ CTEST(K_Move, Incorrect) {
 }
 
 int main(int argc, const char** argv) {
-    _board();
+    board();
     return ctest_main(argc, argv);
 }
 

@@ -1,3 +1,4 @@
+OBJ =
 flags  = -Wall -Werror -std=c99
 
 .PHONY: clean open
@@ -5,7 +6,7 @@ flags  = -Wall -Werror -std=c99
 default: bin/board
 
 test: ./bin/board-test
-    ./bin/board-test
+	./bin/board-test
 
 ./bin/board: ./build/main.o ./build/chess.o ./build/move_fig.o bin test
 	gcc  $(flags) -o ./bin/board ./build/main.o ./build/chess.o ./build/move_fig.o -lm
@@ -23,16 +24,18 @@ bin/board-test: ./build/main_test.o ./build/chess.o ./build/move_fig.o bin
 	gcc  $(flags) ./build/main_test.o ./build/chess.o ./build/move_fig.o -o bin/board-test -lm
 
 ./build/main_test.o: ./test/test.c ./thirdparty/ctest.h ./src/chess.h ./src/move_fig.h build
-	gcc $(flags) -I thirdparty -I src -c ./test/main.c -o ./build/main_test.o -lm
+	gcc $(flags) -I thirdparty -I src -c ./test/test.c -o ./build/main_test.o -lm
+
+
 
 build:
-    mkdir build
+	mkdir build
 
 bin:
-    mkdir bin
+	mkdir bin
 
 clean:
-    rm -rf build bin
+	rm -rf build bin
 
 open:
-./bin/board
+	./bin/board

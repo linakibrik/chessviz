@@ -19,14 +19,12 @@ int move_figure(int* pozition, char** container) {
                     return 0;
                 }
             } 
-            break;
 	}else if (i == 'r'){//Ладья
-		if ((pozition[1] == pozition[3] && pozition[0] != pozition[2]) && PROF) {
+		if ((pozition[1] == pozition[3] && pozition[0] != pozition[2]) && CONTAINER) {
                 return 0;
-            } else if ((pozition[1] != pozition[3] && pozition[0] == pozition[2]) && PROF) {
+            } else if ((pozition[1] != pozition[3] && pozition[0] == pozition[2]) && CONTAINER) {
                 return 0;
-            }
-            break;
+            } 
    }else if(i == 'h'){// Конь
 	   for (k = 0; k <= 7; k++) {
             if (pozition[0] + coordinates[k][0] == pozition[2]) {
@@ -37,14 +35,12 @@ int move_figure(int* pozition, char** container) {
                 }
             }
         }
-        break;
-    }else if (i == 'e'){
-		if (pow(pozition[2] - pozition[0], 2) == pow(pozition[3] - pozition[1], 2)) {
+    }else if (i == 'e'){ //Слон
+		if (pow(pozition[2] - pozition[0], 2) == pow(pozition[3] - pozition[1], 2)){
                 if (CONTAINER) {
                     return 0;
                 }
             }   
-            break;
     }else if(i == 'q'){ //Ферзь
 		if ((pow(pozition[2] - pozition[0], 2) == pow(pozition[3] - pozition[1], 2))
             || (pozition[1] == pozition[3] && pozition[0] != pozition[2]) ||
@@ -53,8 +49,7 @@ int move_figure(int* pozition, char** container) {
                     return 0;
                 }
             }
-            break;
-     }else if(i == 'k')
+     }else if(i == 'k'){ //Король
         g1 = pozition[2] - pozition[0];
             g2 = pozition[3] - pozition[1];
             if (( pow(g1, 2) == 1 || pow(g1, 2) == 0 ) && 
@@ -63,7 +58,6 @@ int move_figure(int* pozition, char** container) {
                 return 0;
                 }
             }
-            break;
       }
       return -1;
 }
